@@ -561,3 +561,69 @@ button {
   z-index: 70;
   max-width: 80vw;
 }
+
+/* ── 3D scene overlays ─────────────────────────────────── */
+.stage-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+.hint3d {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: var(--muted);
+  background: rgba(20, 24, 36, 0.6);
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  pointer-events: none;
+  z-index: 20;
+}
+.tag3d {
+  background: rgba(20, 24, 36, 0.92);
+  color: #fff;
+  font: 700 12px/1 ui-sans-serif, system-ui, sans-serif;
+  padding: 4px 9px;
+  border-radius: 8px;
+  white-space: nowrap;
+  border: 1px solid var(--c, #7c5cff);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  user-select: none;
+}
+.tag3d span {
+  margin-right: 3px;
+}
+.sign3d {
+  background: var(--c, #2a3350);
+  color: #fff;
+  font: 800 13px/1 ui-sans-serif, system-ui, sans-serif;
+  padding: 6px 12px;
+  border-radius: 9px;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  user-select: none;
+}
+.sign3d span {
+  margin-right: 5px;
+}
+.bubble3d {
+  background: #fff;
+  color: #1a1f2e;
+  font: 600 11px/1 ui-sans-serif, system-ui, sans-serif;
+  padding: 5px 9px;
+  border-radius: 9px;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  user-select: none;
+}
+.bubble3d.think {
+  background: #7c5cff;
+  color: #fff;
+}

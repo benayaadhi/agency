@@ -15,7 +15,10 @@ deliverables — not a generic chatbot.
 
 ## ✨ What it does
 
-- **Isometric office** rendered in pure CSS/React — no game engine, no art assets.
+- **Real 3D office** rendered with [react-three-fiber](https://docs.pmnd.rs/react-three-fiber)
+  (Three.js): orbit the camera, animated low-poly people who walk room-to-room,
+  desks, chairs, monitors — all built-in, **no asset downloads required**.
+  Drop in Sketchfab/Mixamo `.glb` files to level it up — see [MODELS.md](MODELS.md).
 - **5 departments**, each with a named specialist:
   | Room | Agent | Role |
   |------|-------|------|
@@ -42,8 +45,9 @@ cp .env.example .env.local   # defaults to LLM_PROVIDER=cli
 npm run dev                  # http://localhost:3000
 ```
 
-Then: click a room (or a chip at the bottom), type a brief, hit **Send brief**
-(or ⌘/Ctrl + Enter).
+Then: drag to orbit / scroll to zoom the 3D office, click a room (or a chip at
+the bottom), type a brief, hit **Send brief** (or ⌘/Ctrl + Enter). Watch the
+agent walk to the meeting table, work, and walk back as the deliverable appears.
 
 ### Testing for free with the Claude CLI
 
@@ -75,11 +79,19 @@ src/
 │   ├── api/generate/route.ts  # POST { agentId, brief } → deliverable
 │   └── page.tsx               # the game screen
 ├── game/
-│   ├── iso.ts                 # isometric projection math
+│   ├── iso.ts                 # vector math (stepToward, distance)
 │   ├── office.ts              # floor plan: rooms, desks, walk paths
 │   └── store.ts               # Zustand state + motion tick (assign→walk→work→back)
-└── components/                # Office, Character, Roster, BriefBar, DeliverablePanel
+└── components/
+    ├── three/                 # 3D scene: Scene, Character3D, Room3D, Furniture3D
+    │   └── models.ts          # optional .glb slots (Sketchfab/Mixamo/Quaternius)
+    ├── Stage.tsx              # client-only dynamic loader for the WebGL scene
+    └── Roster, BriefBar, DeliverablePanel, Markdown
 ```
+
+The grid coordinates in `office.ts` map straight into 3D world space
+(`grid x → world x`, `grid y → world z`), so the same motion system drives both
+the logic and the on-screen characters.
 
 **Flow:** `BriefBar` → `store.assign()` sets the agent walking and POSTs to
 `/api/generate` → the route picks the configured adapter and runs the agent's

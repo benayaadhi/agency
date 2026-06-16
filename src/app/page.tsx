@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { Office } from "@/components/Office";
-import { GameLoop } from "@/components/GameLoop";
+import { Stage } from "@/components/Stage";
 import { Roster } from "@/components/Roster";
 import { BriefBar } from "@/components/BriefBar";
 import { DeliverablePanel } from "@/components/DeliverablePanel";
@@ -36,14 +35,14 @@ export default function Page() {
       </header>
 
       <main className="stage">
-        <Office />
+        <Stage />
         <Roster />
+        <div className="hint3d">drag to orbit · scroll to zoom · click a room to pick it</div>
         {error && <div className="error-toast">⚠ {error}</div>}
         <DeliverablePanel />
       </main>
 
       <BriefBar />
-      <GameLoop />
     </div>
   );
 }
