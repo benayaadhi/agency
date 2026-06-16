@@ -34,7 +34,7 @@ function Office() {
 
       {/* meeting area */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[mx, 0.03, mz]} receiveShadow>
-        <circleGeometry args={[2.4, 40]} />
+        <circleGeometry args={[1.8, 40]} />
         <meshStandardMaterial color="#5b4b8a" transparent opacity={0.35} roughness={1} />
       </mesh>
       <group position={[mx, 0, mz]}>

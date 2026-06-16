@@ -33,6 +33,10 @@ export class CliAdapter implements LLMAdapter {
       input.prompt,
       "--model",
       model,
+      // Disable all tools so the model answers inline instead of behaving like
+      // a coding agent (otherwise it tries to "write files" and asks for approval).
+      "--tools",
+      "",
       "--append-system-prompt",
       input.system,
     ];

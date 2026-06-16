@@ -423,7 +423,7 @@ button {
   top: 0;
   right: 0;
   bottom: 0;
-  width: min(460px, 90vw);
+  width: min(640px, 92vw);
   background: var(--bg-2);
   border-left: 1px solid var(--line);
   box-shadow: -20px 0 50px rgba(0, 0, 0, 0.4);
@@ -626,4 +626,65 @@ button {
 .bubble3d.think {
   background: #7c5cff;
   color: #fff;
+}
+
+/* ── Deliverable preview (motion graphics) ─────────────── */
+.toggle {
+  margin-left: auto;
+  display: flex;
+  gap: 2px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 2px;
+}
+.toggle button {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 6px;
+}
+.toggle button.on {
+  background: var(--c, var(--accent));
+  color: #fff;
+}
+.body.nopad {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.preview-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  background: #000;
+  display: block;
+}
+.codeblock {
+  margin: 0;
+  padding: 14px 16px;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #cdd6f4;
+  background: #11141f;
+  overflow-x: auto;
+}
+.notes {
+  padding: 12px 18px 18px;
+  border-top: 1px solid var(--line);
+}
+.openlink {
+  margin-left: auto;
+  background: var(--c, var(--accent));
+  color: #fff;
+  border: none;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 7px;
 }

@@ -76,7 +76,7 @@ export function MeetingTable() {
   return (
     <group>
       <mesh position={[0, 0.72, 0]} castShadow receiveShadow>
-        <cylinderGeometry args={[1.5, 1.5, 0.1, 32]} />
+        <cylinderGeometry args={[1.4, 1.4, 0.1, 32]} />
         <meshStandardMaterial color={WOOD} />
       </mesh>
       <mesh position={[0, 0.36, 0]}>

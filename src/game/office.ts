@@ -27,7 +27,7 @@ export interface RoomLayout {
 }
 
 /** Central table where assigned agents gather to "work". */
-export const MEETING: Point = { x: 7.5, y: 8.5 };
+export const MEETING: Point = { x: 7.5, y: 6.5 };
 
 export const ROOMS: RoomLayout[] = [
   {
@@ -59,6 +59,12 @@ export const ROOMS: RoomLayout[] = [
     rect: { x: 11, y: 8, w: 5, h: 5 },
     desk: { x: 13, y: 10 },
     door: { x: 13, y: 8 },
+  },
+  {
+    id: "motion",
+    rect: { x: 6, y: 8, w: 4, h: 5 },
+    desk: { x: 7.5, y: 10.5 },
+    door: { x: 7.5, y: 8 },
   },
 ];
 

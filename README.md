@@ -27,8 +27,13 @@ deliverables — not a generic chatbot.
   | 📱 Social Media | Pixel | Social Media Strategist |
   | 📊 Analytics | Ada | Head of Analytics |
   | 💰 Finance | Cash | Finance Controller |
+  | 🎬 Motion Studio | Nova | Motion Designer (outputs **live animated HTML**) |
 - **Game loop:** pick a room → type a brief → the agent walks to the meeting
   table, works, then walks back while the deliverable streams into a side panel.
+- **Live motion-graphic preview:** when an agent (e.g. Nova) returns a
+  self-contained HTML document, the panel renders it **live in a sandboxed
+  iframe** with a Preview ↔ Code toggle — animated visuals you can watch, not
+  just describe.
 - **Pluggable AI engine** via a single env var (`LLM_PROVIDER`):
   - `cli` — shells out to your local `claude` CLI. **Free to test** with an
     existing Claude Code session, no API key needed.
